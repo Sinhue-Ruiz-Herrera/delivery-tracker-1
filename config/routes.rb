@@ -1,23 +1,21 @@
 Rails.application.routes.draw do
 
-
-
   # Routes for the Package resource:
-get("/", {:controller => "packages", :action => "index"})
-  # CREATE
-  post("/insert_package", { :controller => "packages", :action => "create" })
-          
-  # READ
-  get("/packages", { :controller => "packages", :action => "index" })
+  get("/", {:controller => "packages", :action => "index"})
   
-  get("/packages/:path_id", { :controller => "packages", :action => "show" })
+  post("/insert_package", { :controller => "packages", :action => "create" })
+  post("/modify_package/:path_id", { :controller => "packages", :action => "update"})
+          
+  get("/delete_package/:path_id", { :controller => "packages", :action => "destroy" })
+  
+  #get("/packages/:path_id", { :controller => "packages", :action => "show" })
   
   # UPDATE
   
-  post("/modify_package/:path_id", { :controller => "packages", :action => "update" })
+  #post("/modify_package/:path_id", { :controller => "packages", :action => "update" })
   
   # DELETE
-  get("/delete_package/:path_id", { :controller => "packages", :action => "destroy" })
+  #get("/delete_package/:path_id", { :controller => "packages", :action => "destroy" })
 
   #------------------------------
 
