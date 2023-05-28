@@ -8,7 +8,7 @@ class PackagesController < ApplicationController
     render({ :template => "packages/show.html.erb" })
   end
 
-  #def show
+  #def show => got rid of it since I will only use one page
    # the_id = params.fetch("path_id")
 
    # matching_packages = Package.where({ :id => the_id })
@@ -28,13 +28,13 @@ class PackagesController < ApplicationController
     @new_package.user_id = session.fetch(:user_id)
 
     @new_package.save
-   #just adding individual fetchings since I can define each one of the
+   #adding a fetching per each thing I need to be filled on my database
    #things I need 
    
     #@the_package.content = params.fetch("query_content")
     #the_package.status = params.fetch("query_status")
     
-    redirect_to("/", {:notice=>"Added to list"})
+    redirect_to("/", { :notice=> "Added to list" })
 
   end
 
